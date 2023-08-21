@@ -16,7 +16,7 @@ from utils import *
 
 # creation of attractor
 # LOGO De_Jong -1.1869514241230223, 0.8886138736437754, -2.8472353600232863, -1.9643008196986904  #
-attr_fun = De_Jong
+attr_fun = De_Jong11
 a, b, c, d = np.random.uniform(-3, 3, 4)
 
 N = 100000000
@@ -50,5 +50,10 @@ add_border(in_img,
            output_image=in_img,
            border=125,
            color='white')
+
+# pixel sorting with luminosity
+sort_pixels(Image.open(in_img).convert('RGB'),
+            luminosity,
+            lambda lum: (lum > 2 / 6) & (lum < 4 / 6), 1).save('./output/' + img_name + f'_PSlum.{extension}')
 
 # embed()
