@@ -162,3 +162,34 @@ def laplace(pixels):
     return np.abs(convolve2d(lum, np.array([[0, -1, 0],
                                             [-1, 4, -1],
                                             [0, -1, 0]]), 'same'))
+
+
+class MyCMAPS:
+    def __init__(self):
+        """
+        This class contains my custom cmaps for datashader
+        """
+        self.cmap_pink = ['#FFFFFF', '#FF8FB1', '#B270A2', '#7A4495']
+        self.cmap_eternal_blue = ['#FFFFFF', '#8e9fa7', '#848c90', '#106076', '#188ca4', '#7cd4dc']
+        self.cmap_red_highlight = ['#FFFFFF', '#000000', '#820000']
+        self.cmap_red_highlight2 = ['#FFFFFF', '#000000', '#FF0000']
+        self.cmap_plane = ['#DDDDDD', '#414141', '#30475E', '#FF0000']
+        self.cmap_fall = ['#FFFFFF', '#603601', '#361500', '#1C0A00']
+        self.cmap_bw = ['#FFFFFF', 'black']
+        self.cmap_bw_r = ['black', '#FFFFFF']
+        self.cmap_gold_ren = ['#FFFFFF', '#D7A86E', '#A64B2A', '#8E3200', '#E6B325', '#BF9742', '#A47E3B']
+        self.cmap_starry_night = ['#FFFFFF', '#0B1E38', '#DB901C', '#E8E163', '#7FC5DC', '#4888C8', '#173679']
+        self.cmap_elegant_love = ['#FFFFFF', '#680819', '#800021', '#9F1D34', '#D1B12F', '#CC9900']
+        self.cmap_mona_lisa = ['#FFFFFF', '#727F4B', '#A9A569', '#E9C468', '#92692E', '#764B1C', '#352524']
+        self.cmap_liberty_leading = ['#FFFFFF', '#fffed8', '#463b32', '#7a6c5a', '#97876d', '#3f4b58',
+                                     '#1e3049', '#9e2721']
+        self.cmap_dante_virgil = ['#FFFFFF', '#8c6d46', '#40240c', '#d9ab82', '#8c4b26', '#400904']
+        self.cmap_dulle_griet = ['#FFFFFF', '#af3a4a', '#242425', '#2c2929', '#6c2f24', '#AF5853']
+        self.cmap_the_way_it_ends = ['#FFFFFF', '#252c44', '#3d343d', '#8c9ca9', '#4c494f', '#DEC066']
+        self.cmap_alien = ['#FFFFFF', '#dcdee0', '#3c6c8c', '#74245c', '#794a72', '#edb2b7']
+        self.cmap_will_of = ['#FFFFFF', '#f0862c', '#e96411', '#961b0b', '#657A79', '#AAA1A2']
+        self.cmap_typhoons = ['#FFFFFF', '#2F292D', '#112b31', '#115566', '#00B9BF', '#EE3956', '#f47d8e']
+        self.cmap_death_we = ['#FFFFFF', '#968B79', '#E6E9D6', '#525150', '#343c3b', '#424c44', '#68401c', '#C49867',
+                              '#D9BA83']
+        self.cmap_vibrations = ['#FFFFFF', '#706260', '#6c636c', '#BBAAB0', '#684932', '#4f3f3e', '#684932', '#954461',
+                                '#B85F7D', '#D7AF79']
