@@ -164,6 +164,12 @@ def laplace(pixels):
                                             [0, -1, 0]]), 'same'))
 
 
+def invert_image(in_img, output_image):
+    img = Image.open(in_img).convert('RGB')
+    img = ImageOps.invert(img)
+    img.save(output_image)
+
+
 class MyCMAPS:
     def __init__(self):
         """

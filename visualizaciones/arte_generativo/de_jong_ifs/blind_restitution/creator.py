@@ -16,11 +16,11 @@ from utils import *
 
 # creation of attractor
 # LOGO De_Jong -1.1869514241230223, 0.8886138736437754, -2.8472353600232863, -1.9643008196986904  #
-attr_fun = De_Jong11
+attr_fun = Hopalong1
 a, b, c, d = np.random.uniform(-3, 3, 4)
 
 N = 100000000
-df = trajectory(attr_fun, 0, 0, a, b, c, d, n=N)
+df = trajectory(attr_fun, 0, 0, a, b, c, n=N)  # trajectory(attr_fun, 0, 0, a, b, c, d, n=N)
 cvs = ds.Canvas(plot_width=500, plot_height=500)
 agg = cvs.points(df, 'x', 'y')
 ds.transfer_functions.Image.border = 1
@@ -57,3 +57,9 @@ sort_pixels(Image.open(in_img).convert('RGB'),
             lambda lum: (lum > 2 / 6) & (lum < 4 / 6), 1).save('./output/' + img_name + f'_PSlum.{extension}')
 
 # embed()
+
+# invert the original image
+invert_image(in_img, './output/' + img_name + f'_inv.{extension}')
+
+# invert the pixel sorted image
+invert_image('./output/' + img_name + f'_PSlum.{extension}', './output/' + img_name + f'_PSlum_inv.{extension}')
