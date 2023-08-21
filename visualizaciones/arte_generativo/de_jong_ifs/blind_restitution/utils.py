@@ -77,6 +77,18 @@ def Hopalong1(x, y, a, b, c, *o):
 
 
 @jit(nopython=True)
+def HopalongM1(x, y, a, b, c, *o):
+    return y - sqrt(fabs(b * x**2 - c)) * np.sign(x), \
+           a - x
+
+
+@jit(nopython=True)
+def HopalongM2(x, y, a, b, c, *o):
+    return y - sqrt(fabs(b**2 * x - c**3)) * np.sign(x), \
+           a - x
+
+
+@jit(nopython=True)
 def G(x, mu):
     return mu * x + 2 * (1 - mu) * x**2 / (1.0 + x**2)
 
@@ -84,6 +96,12 @@ def G(x, mu):
 @jit(nopython=True)
 def Gumowski_Mira(x, y, a, b, mu, *o):
     xn = y + a*(1 - b*y**2)*y  +  G(x, mu)
+    yn = -x + G(xn, mu)
+    return xn, yn
+
+@jit(nopython=True)
+def Gumowski_Mira2(x, y, a, b, mu, *o):
+    xn = y + a*(1 - b*y**3)*y  +  G(x, mu)
     yn = -x + G(xn, mu)
     return xn, yn
 

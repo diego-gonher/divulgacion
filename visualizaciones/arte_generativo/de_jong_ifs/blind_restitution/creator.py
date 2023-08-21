@@ -16,11 +16,11 @@ from utils import *
 
 # creation of attractor
 # LOGO De_Jong -1.1869514241230223, 0.8886138736437754, -2.8472353600232863, -1.9643008196986904  #
-attr_fun = Hopalong1
-a, b, c, d = np.random.uniform(-3, 3, 4)
+attr_fun = De_Jong10
+a, b, c, d, e = np.random.uniform(-0.3, 0.3, 5)
 
 N = 100000000
-df = trajectory(attr_fun, 0, 0, a, b, c, n=N)  # trajectory(attr_fun, 0, 0, a, b, c, d, n=N)
+df = trajectory(attr_fun, 0, 0, a, b, c, d, n=N)  # trajectory(attr_fun, 0, 0, a, b, c, d, n=N)
 cvs = ds.Canvas(plot_width=500, plot_height=500)
 agg = cvs.points(df, 'x', 'y')
 ds.transfer_functions.Image.border = 1
