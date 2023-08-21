@@ -61,5 +61,10 @@ sort_pixels(Image.open(in_img).convert('RGB'),
 # invert the original image
 invert_image(in_img, './output/' + img_name + f'_inv.{extension}')
 
+# pixel sorting with luminosity the inverted image
+sort_pixels(Image.open('./output/' + img_name + f'_inv.{extension}').convert('RGB'),
+            luminosity,
+            lambda lum: (lum > 2 / 6) & (lum < 4 / 6), 1).save('./output/' + img_name + f'_PSlum_inv.{extension}')
+
 # invert the pixel sorted image
-invert_image('./output/' + img_name + f'_PSlum.{extension}', './output/' + img_name + f'_PSlum_inv.{extension}')
+# invert_image('./output/' + img_name + f'_PSlum.{extension}', './output/' + img_name + f'_PSlum_inv.{extension}')
